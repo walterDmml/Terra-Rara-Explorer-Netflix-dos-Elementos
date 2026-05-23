@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terra Rara Explorer — Netflix dos Elementos</title>
+<title>Terra Rara Explorer — Brasil & China: Geopolítica e Tecnologia</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
 <style>
@@ -18,12 +18,13 @@
   --bg-light:  #F1F5F9;
   --white:     #FFFFFF;
   --score-bg:  #E0F7F5;
-  --score-col: #0F766E;
   --shadow:    0 4px 24px rgba(15,42,68,.12);
   --shadow-hover: 0 12px 40px rgba(15,42,68,.22);
   --radius:    14px;
   --radius-sm: 8px;
   --transition: .28s cubic-bezier(.4,0,.2,1);
+  --china-red: #C62828;
+  --brazil-green: #2E7D32;
 }
 html { scroll-behavior: smooth; }
 body {
@@ -42,11 +43,7 @@ body {
   padding: .6rem 2rem;
   box-shadow: 0 2px 16px rgba(0,0,0,.25);
 }
-#scoreboard .logo {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.05rem; font-weight: 800;
-  color: var(--mint); letter-spacing: .5px;
-}
+#scoreboard .logo { font-family: 'Poppins', sans-serif; font-size: 1.05rem; font-weight: 800; color: var(--mint); }
 #scoreboard .score-area {
   display: flex; align-items: center; gap: .6rem;
   background: rgba(45,212,191,.15);
@@ -54,15 +51,10 @@ body {
   border-radius: 99px;
   padding: .3rem .9rem;
 }
-#scoreboard .score-area span {
-  color: var(--mint); font-size: .85rem; font-weight: 600;
-}
+#scoreboard .score-area span { color: var(--mint); font-size: .85rem; font-weight: 600; }
 #score-val { font-size: 1rem; color: var(--white); font-weight: 700; }
 #scoreboard .nav-links { display: flex; gap: 1.2rem; }
-#scoreboard .nav-links a {
-  color: rgba(255,255,255,.65); font-size: .82rem;
-  text-decoration: none; transition: color var(--transition);
-}
+#scoreboard .nav-links a { color: rgba(255,255,255,.65); font-size: .82rem; text-decoration: none; transition: color var(--transition); }
 #scoreboard .nav-links a:hover { color: var(--mint); }
 
 /* ===== HERO ===== */
@@ -98,13 +90,12 @@ body {
 #hero h1 span { color: var(--mint); }
 #hero p {
   color: rgba(255,255,255,.72); font-size: clamp(.95rem, 2vw, 1.15rem);
-  max-width: 620px; margin: 0 auto 2.2rem; line-height: 1.7;
+  max-width: 720px; margin: 0 auto 2.2rem; line-height: 1.7;
 }
 .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 .btn-primary {
   background: var(--mint); color: var(--petrol);
-  font-family: 'Inter', sans-serif;
-  font-size: .95rem; font-weight: 700;
+  font-weight: 700;
   padding: .75rem 2rem; border-radius: 99px;
   border: none; cursor: pointer;
   transition: transform var(--transition), box-shadow var(--transition);
@@ -113,12 +104,11 @@ body {
 .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(45,212,191,.45); }
 .btn-secondary {
   background: transparent; color: var(--white);
-  font-family: 'Inter', sans-serif;
-  font-size: .95rem; font-weight: 600;
+  font-weight: 600;
   padding: .75rem 2rem; border-radius: 99px;
   border: 1px solid rgba(255,255,255,.35);
   cursor: pointer; transition: all var(--transition);
-  text-decoration: none; display: inline-block;
+  text-decoration: none;
 }
 .btn-secondary:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.7); }
 
@@ -139,10 +129,98 @@ body {
   font-size: clamp(1.6rem, 3.5vw, 2.2rem);
   font-weight: 800; color: var(--petrol); margin-bottom: .5rem;
 }
-.section-header p { color: var(--text-muted); font-size: 1rem; max-width: 520px; margin: 0 auto; }
+.section-header p { color: var(--text-muted); font-size: 1rem; max-width: 650px; margin: 0 auto; }
+
+/* ===== SEÇÕES EXPOSITIVAS ===== */
+.geo-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.8rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.geo-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  flex: 1;
+  min-width: 260px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition);
+}
+.geo-card:hover { transform: translateY(-5px); }
+.geo-header {
+  padding: 1.5rem 1.5rem 1rem;
+  text-align: center;
+}
+.geo-header.china { background: rgba(198,40,40,.05); border-bottom: 3px solid var(--china-red); }
+.geo-header.brazil { background: rgba(46,125,50,.05); border-bottom: 3px solid var(--brazil-green); }
+.geo-icon { font-size: 2.8rem; }
+.geo-header h3 { font-size: 1.6rem; font-family: 'Poppins', sans-serif; margin: .3rem 0 .1rem; }
+.geo-header p { font-weight: 700; font-size: .85rem; }
+.geo-body { padding: 1.3rem 1.5rem 1.8rem; }
+.geo-body ul { list-style: none; }
+.geo-body li { margin-bottom: 1rem; border-left: 3px solid var(--mint); padding-left: 1rem; font-size: .9rem; line-height: 1.4; color: var(--text-muted); }
+.geo-body strong { color: var(--petrol); }
+
+.process-steps {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.step {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  flex: 1;
+  min-width: 180px;
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+.step-icon { font-size: 2rem; display: block; margin-bottom: .5rem; }
+.step h4 { font-family: 'Poppins', sans-serif; color: var(--teal); margin-bottom: .3rem; }
+.step p { font-size: .85rem; color: var(--text-muted); }
+
+.impact-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.impact-item {
+  background: var(--white);
+  flex: 1;
+  border-radius: var(--radius);
+  padding: 1.3rem;
+  border-left: 5px solid #dc2626;
+  box-shadow: var(--shadow);
+}
+.impact-item h4 { color: #b91c1c; margin-bottom: .6rem; display: flex; gap: .5rem; align-items: center; }
+.impact-item p { font-size: .9rem; color: var(--petrol); }
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.timeline-item {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .8rem;
+  box-shadow: var(--shadow);
+}
+.timeline-year { font-weight: 800; font-size: 1.2rem; color: var(--teal); min-width: 80px; }
+.timeline-desc { flex: 1; color: var(--text-muted); font-size: .95rem; }
+.timeline-tag { background: var(--score-bg); padding: .2rem .7rem; border-radius: 99px; font-size: .7rem; font-weight: 700; }
 
 /* ===== CARDS DE ELEMENTOS ===== */
-#elementos { background: var(--bg-light); }
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
@@ -154,372 +232,152 @@ body {
   box-shadow: var(--shadow);
   overflow: hidden;
   cursor: pointer;
-  transition: transform var(--transition), box-shadow var(--transition);
-  display: flex; flex-direction: column;
+  transition: all var(--transition);
 }
 .element-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
-.card-top {
-  height: 7px;
-  background: linear-gradient(90deg, var(--teal), var(--mint));
-}
-.card-body { padding: 1.3rem; flex: 1; display: flex; flex-direction: column; }
-.card-icon {
-  font-size: 2.4rem; margin-bottom: .7rem;
-  display: block; text-align: center;
-}
-.card-symbol {
-  display: inline-block;
-  background: var(--score-bg); color: var(--teal);
-  font-family: 'Poppins', sans-serif; font-weight: 800; font-size: .85rem;
-  padding: .2rem .7rem; border-radius: var(--radius-sm); margin-bottom: .5rem;
-}
-.card-name {
-  font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 800;
-  color: var(--petrol); margin-bottom: .3rem;
-}
-.card-app { color: var(--text-muted); font-size: .85rem; line-height: 1.45; margin-bottom: .8rem; flex: 1; }
-.card-missions {
-  font-size: .78rem; color: var(--teal); font-weight: 600;
-  margin-bottom: .9rem;
-}
+.card-top { height: 7px; background: linear-gradient(90deg, var(--teal), var(--mint)); }
+.card-body { padding: 1.3rem; }
+.card-icon { font-size: 2.4rem; margin-bottom: .7rem; display: block; text-align: center; }
+.card-symbol { background: var(--score-bg); color: var(--teal); font-weight: 800; font-size: .85rem; padding: .2rem .7rem; border-radius: var(--radius-sm); display: inline-block; margin-bottom: .5rem; }
+.card-name { font-family: 'Poppins', sans-serif; font-size: 1.15rem; font-weight: 800; margin-bottom: .3rem; }
+.card-app { color: var(--text-muted); font-size: .85rem; line-height: 1.45; margin-bottom: .8rem; }
 .btn-explore {
-  display: block; width: 100%;
   background: var(--petrol); color: var(--white);
-  font-family: 'Inter', sans-serif; font-size: .88rem; font-weight: 700;
-  padding: .6rem; border-radius: var(--radius-sm);
-  border: none; cursor: pointer;
+  font-weight: 700; font-size: .88rem; padding: .6rem; border-radius: var(--radius-sm);
+  border: none; cursor: pointer; width: 100%;
   transition: background var(--transition);
-  text-align: center;
 }
 .btn-explore:hover { background: var(--teal); }
 
 /* ===== MODAL ===== */
 #modal-overlay {
-  display: none;
-  position: fixed; inset: 0; z-index: 2000;
-  background: rgba(10,25,40,.75);
-  backdrop-filter: blur(4px);
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(10,25,40,.75); backdrop-filter: blur(4px);
   align-items: center; justify-content: center;
   padding: 1.5rem;
 }
 #modal-overlay.active { display: flex; }
-#modal {
-  background: var(--white);
-  border-radius: 20px;
-  width: 100%; max-width: 580px;
-  max-height: 90vh; overflow-y: auto;
-  box-shadow: 0 24px 80px rgba(0,0,0,.35);
-  animation: slideUp .35s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes slideUp { from { opacity:0; transform: translateY(30px) scale(.96); } to { opacity:1; transform: none; } }
-.modal-header {
-  background: linear-gradient(135deg, var(--petrol), #0d4a47);
-  padding: 1.8rem 1.8rem 1.4rem;
-  position: relative; color: var(--white);
-  border-radius: 20px 20px 0 0;
-}
-.modal-close {
-  position: absolute; top: 1rem; right: 1rem;
-  background: rgba(255,255,255,.15); border: none;
-  color: var(--white); font-size: 1.3rem; width: 34px; height: 34px;
-  border-radius: 50%; cursor: pointer; transition: background var(--transition);
-  display: flex; align-items: center; justify-content: center;
-}
-.modal-close:hover { background: rgba(255,255,255,.3); }
-.modal-el-icon { font-size: 3rem; margin-bottom: .5rem; display: block; }
-.modal-symbol {
-  display: inline-block;
-  background: rgba(45,212,191,.25); color: var(--mint);
-  font-family: 'Poppins', sans-serif; font-weight: 800; font-size: .95rem;
-  padding: .25rem .9rem; border-radius: var(--radius-sm); margin-bottom: .5rem;
-}
-.modal-name {
-  font-family: 'Poppins', sans-serif; font-size: 1.7rem; font-weight: 800;
-  color: var(--white); margin-bottom: .2rem;
-}
-.modal-atomic { color: rgba(255,255,255,.6); font-size: .85rem; }
+#modal { background: var(--white); border-radius: 20px; width: 100%; max-width: 580px; max-height: 90vh; overflow-y: auto; box-shadow: 0 24px 80px rgba(0,0,0,.35); animation: slideUp .35s ease; }
+@keyframes slideUp { from { opacity:0; transform: translateY(30px); } to { opacity:1; transform: none; } }
+.modal-header { background: linear-gradient(135deg, var(--petrol), #0d4a47); padding: 1.8rem; position: relative; color: white; border-radius: 20px 20px 0 0; }
+.modal-close { position: absolute; top: 1rem; right: 1rem; background: rgba(255,255,255,.15); border: none; color: white; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1.2rem; }
 .modal-body { padding: 1.5rem 1.8rem; }
-.modal-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; margin-bottom: 1.2rem;
-}
-.modal-info-card {
-  background: var(--bg-light); border-radius: var(--radius-sm);
-  padding: .9rem; border-left: 3px solid var(--mint);
-}
-.modal-info-card label {
-  display: block; font-size: .72rem; font-weight: 700; color: var(--teal);
-  text-transform: uppercase; letter-spacing: 1px; margin-bottom: .3rem;
-}
-.modal-info-card p { font-size: .88rem; color: var(--petrol); line-height: 1.5; }
-.modal-risk {
-  background: #fff5f5; border-left: 3px solid #f87171;
-  border-radius: var(--radius-sm); padding: .9rem; margin-bottom: 1rem;
-}
-.modal-risk label { font-size: .72rem; font-weight: 700; color: #dc2626; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: .3rem; }
-.modal-risk p { font-size: .88rem; color: #7f1d1d; line-height: 1.5; }
-.modal-curiosity {
-  background: linear-gradient(135deg, var(--score-bg), #ddfaf6);
-  border-radius: var(--radius-sm); padding: .9rem; margin-bottom: 1.4rem;
-  border: 1px solid rgba(15,118,110,.2);
-}
-.modal-curiosity label { font-size: .72rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: .3rem; }
-.modal-curiosity p { font-size: .88rem; color: var(--petrol); line-height: 1.5; }
-.btn-quiz {
-  display: block; width: 100%;
-  background: linear-gradient(135deg, var(--teal), var(--mint));
-  color: var(--white); font-family: 'Inter', sans-serif;
-  font-size: .95rem; font-weight: 700; padding: .8rem;
-  border-radius: var(--radius-sm); border: none; cursor: pointer;
-  transition: opacity var(--transition), transform var(--transition);
-}
-.btn-quiz:hover { opacity: .9; transform: translateY(-1px); }
-
-/* ===== QUIZ ===== */
-#quiz-area { display: none; padding: 0 1.8rem 1.5rem; animation: fadeIn .3s ease; }
-@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
-.quiz-question {
-  font-size: 1rem; font-weight: 600; color: var(--petrol);
-  margin-bottom: 1rem; line-height: 1.5;
-}
-.quiz-options { display: flex; flex-direction: column; gap: .6rem; margin-bottom: 1rem; }
-.quiz-option {
-  background: var(--bg-light); border: 1.5px solid transparent;
-  border-radius: var(--radius-sm); padding: .75rem 1rem;
-  cursor: pointer; font-family: 'Inter', sans-serif;
-  font-size: .9rem; color: var(--petrol); text-align: left;
-  transition: all var(--transition);
-}
+.modal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .9rem; }
+.modal-info-card, .modal-risk, .modal-curiosity { background: var(--bg-light); border-radius: var(--radius-sm); padding: .9rem; margin-bottom: .8rem; }
+.btn-quiz { background: linear-gradient(135deg, var(--teal), var(--mint)); color: white; width: 100%; padding: .8rem; border: none; border-radius: var(--radius-sm); font-weight: bold; cursor: pointer; }
+#quiz-area { display: none; padding: 0 1.8rem 1.5rem; }
+.quiz-option { background: var(--bg-light); border: 1.5px solid transparent; border-radius: var(--radius-sm); padding: .75rem 1rem; width: 100%; text-align: left; margin-bottom: .5rem; cursor: pointer; transition: all var(--transition); }
 .quiz-option:hover:not(:disabled) { border-color: var(--mint); background: var(--score-bg); }
-.quiz-option.correct { background: #d1fae5; border-color: #10b981; color: #065f46; }
-.quiz-option.wrong { background: #fee2e2; border-color: #ef4444; color: #7f1d1d; }
-.quiz-option:disabled { cursor: default; }
-.quiz-feedback {
-  display: none; border-radius: var(--radius-sm);
-  padding: .8rem 1rem; font-size: .9rem; line-height: 1.5;
-}
+.quiz-option.correct { background: #d1fae5; border-color: #10b981; }
+.quiz-option.wrong { background: #fee2e2; border-color: #ef4444; }
+.quiz-feedback { display: none; margin-top: 1rem; padding: .8rem; border-radius: var(--radius-sm); }
 .quiz-feedback.show { display: block; }
 .quiz-feedback.correct { background: #d1fae5; color: #065f46; border-left: 3px solid #10b981; }
 .quiz-feedback.wrong { background: #fee2e2; color: #7f1d1d; border-left: 3px solid #ef4444; }
 
 /* ===== OBJETOS COTIDIANO ===== */
 #cotidiano { background: var(--petrol); }
-#cotidiano .section-header h2 { color: var(--white); }
+#cotidiano .section-header h2 { color: white; }
 #cotidiano .section-header p { color: rgba(255,255,255,.6); }
 #cotidiano .section-tag { background: rgba(45,212,191,.2); color: var(--mint); }
-.objects-grid {
-  display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 1rem;
-}
-.object-card {
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12);
-  border-radius: var(--radius); padding: 1.3rem 1rem; text-align: center;
-  cursor: pointer; transition: all var(--transition);
-}
+.objects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 1rem; }
+.object-card { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); border-radius: var(--radius); padding: 1rem; text-align: center; cursor: pointer; transition: all var(--transition); color: white; }
 .object-card:hover { background: rgba(45,212,191,.15); border-color: var(--mint); transform: translateY(-3px); }
 .object-card.active { background: rgba(45,212,191,.2); border-color: var(--mint); }
-.object-icon { font-size: 2.5rem; margin-bottom: .6rem; display: block; }
-.object-name { color: var(--white); font-size: .9rem; font-weight: 600; }
-#object-detail {
-  margin-top: 1.8rem;
-  background: rgba(255,255,255,.06); border: 1px solid rgba(45,212,191,.25);
-  border-radius: var(--radius); padding: 1.4rem;
-  display: none; animation: fadeIn .3s ease;
-}
-#object-detail.show { display: block; }
-#object-detail h3 { color: var(--mint); font-family: 'Poppins', sans-serif; font-size: 1.1rem; margin-bottom: .9rem; }
-.object-elements-list { display: flex; flex-wrap: wrap; gap: .6rem; }
-.obj-el-tag {
-  background: rgba(45,212,191,.15); border: 1px solid rgba(45,212,191,.3);
-  color: var(--mint); border-radius: var(--radius-sm); padding: .4rem .9rem;
-  font-size: .83rem; font-weight: 600;
-}
-.obj-el-desc { color: rgba(255,255,255,.65); font-size: .82rem; margin-top: .1rem; }
+.object-icon { font-size: 2rem; display: block; margin-bottom: .5rem; }
+.object-name { font-size: .9rem; font-weight: 600; }
+#object-detail { margin-top: 1.5rem; background: rgba(45,212,191,.1); border-radius: var(--radius); padding: 1.2rem; display: none; border: 1px solid rgba(45,212,191,.3); }
+#object-detail.show { display: block; animation: fadeIn .3s ease; }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+#object-detail h3 { color: var(--mint); font-family: 'Poppins', sans-serif; margin-bottom: 1rem; }
+.object-elements-list { display: flex; flex-wrap: wrap; gap: .8rem; }
+.obj-el-tag { background: rgba(45,212,191,.15); border: 1px solid rgba(45,212,191,.3); color: var(--mint); border-radius: var(--radius-sm); padding: .4rem .9rem; font-size: .85rem; font-weight: 600; display: inline-block; }
 
 /* ===== COMPARAÇÃO ===== */
-#comparacao { background: var(--bg-light); }
-.compare-controls {
-  display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem;
-}
-.compare-controls select {
-  font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 600;
-  color: var(--petrol); background: var(--white);
-  border: 1.5px solid #cbd5e1; border-radius: var(--radius-sm);
-  padding: .6rem 1rem; cursor: pointer; transition: border-color var(--transition);
-  min-width: 180px;
-}
-.compare-controls select:focus { outline: none; border-color: var(--mint); }
-.btn-compare {
-  background: var(--teal); color: var(--white);
-  font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 700;
-  padding: .6rem 1.6rem; border-radius: var(--radius-sm); border: none; cursor: pointer;
-  transition: background var(--transition);
-}
+.compare-controls { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
+.compare-controls select { font-family: 'Inter', sans-serif; font-size: .9rem; padding: .6rem 1rem; border-radius: var(--radius-sm); border: 1px solid #cbd5e1; background: white; cursor: pointer; min-width: 180px; }
+.btn-compare { background: var(--teal); color: white; font-weight: 700; padding: .6rem 1.6rem; border-radius: var(--radius-sm); border: none; cursor: pointer; transition: background var(--transition); }
 .btn-compare:hover { background: var(--petrol); }
-#compare-result {
-  display: none; animation: fadeIn .3s ease;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem;
-}
+#compare-result { display: none; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 1rem; }
 #compare-result.show { display: grid; }
-.compare-col {
-  background: var(--white); border-radius: var(--radius);
-  box-shadow: var(--shadow); overflow: hidden;
-}
-.compare-col-header {
-  background: linear-gradient(135deg, var(--petrol), #0d4a47);
-  padding: 1rem 1.2rem;
-}
-.compare-col-header .c-symbol {
-  display: inline-block;
-  background: rgba(45,212,191,.25); color: var(--mint);
-  font-family: 'Poppins', sans-serif; font-weight: 800; font-size: .85rem;
-  padding: .2rem .7rem; border-radius: var(--radius-sm); margin-bottom: .3rem;
-}
-.compare-col-header h3 {
-  font-family: 'Poppins', sans-serif; font-size: 1.2rem; font-weight: 800; color: var(--white);
-}
+.compare-col { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+.compare-col-header { background: linear-gradient(135deg, var(--petrol), #0d4a47); padding: 1rem 1.2rem; }
+.compare-col-header .c-symbol { background: rgba(45,212,191,.25); color: var(--mint); font-weight: 800; font-size: .8rem; padding: .2rem .7rem; border-radius: var(--radius-sm); display: inline-block; margin-bottom: .3rem; }
+.compare-col-header h3 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: white; }
 .compare-col-body { padding: 1.2rem; }
-.compare-row {
-  margin-bottom: .9rem; padding-bottom: .9rem;
-  border-bottom: 1px solid var(--bg-light);
-}
+.compare-row { margin-bottom: 1rem; padding-bottom: .8rem; border-bottom: 1px solid var(--bg-light); }
 .compare-row:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
-.compare-row label {
-  display: block; font-size: .72rem; font-weight: 700; color: var(--teal);
-  text-transform: uppercase; letter-spacing: 1px; margin-bottom: .25rem;
-}
-.compare-row p { font-size: .87rem; color: var(--petrol); line-height: 1.5; }
+.compare-row label { display: block; font-size: .7rem; font-weight: 700; color: var(--teal); text-transform: uppercase; margin-bottom: .3rem; }
+.compare-row p { font-size: .88rem; color: var(--petrol); line-height: 1.5; }
 
-/* ===== DESAFIO FINAL ===== */
-#desafio {
-  background: linear-gradient(135deg, var(--petrol) 0%, #0d3d5e 100%);
-  padding: 5rem 2rem;
-  text-align: center;
-}
-#desafio h2 {
-  font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 4vw, 2.2rem);
-  font-weight: 800; color: var(--white); margin-bottom: .7rem;
-}
-#desafio p { color: rgba(255,255,255,.65); font-size: 1rem; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto; }
-#challenge-box {
-  display: none;
-  background: rgba(45,212,191,.12); border: 1px solid rgba(45,212,191,.35);
-  border-radius: var(--radius); padding: 1.5rem 2rem;
-  max-width: 620px; margin: 1.5rem auto;
-  animation: fadeIn .4s ease; text-align: left;
-}
+/* ===== DESAFIO ===== */
+#desafio { background: linear-gradient(135deg, var(--petrol), #0d3d5e); text-align: center; padding: 4rem 2rem; }
+#desafio h2 { color: white; font-family: 'Poppins', sans-serif; font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 1rem; }
+#challenge-box { background: rgba(45,212,191,.12); border: 1px solid rgba(45,212,191,.35); border-radius: var(--radius); padding: 1.5rem; max-width: 700px; margin: 1.5rem auto 0; display: none; text-align: left; }
 #challenge-box.show { display: block; }
-#challenge-box .challenge-label {
-  font-size: .72rem; font-weight: 700; color: var(--mint);
-  text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: .6rem; display: block;
-}
-#challenge-box p {
-  color: var(--white); font-size: 1.05rem; line-height: 1.6; margin-bottom: 0;
-  max-width: none;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: #070f18; color: rgba(255,255,255,.4);
-  text-align: center; padding: 1.8rem 1rem; font-size: .82rem;
-}
-footer span { color: var(--mint); }
-
-/* ===== RESPONSIVO ===== */
-@media (max-width: 640px) {
-  #scoreboard .nav-links { display: none; }
-  .modal-grid { grid-template-columns: 1fr; }
-  #compare-result { grid-template-columns: 1fr; }
-  .compare-controls { flex-direction: column; align-items: center; }
-}
+.challenge-label { font-size: .7rem; font-weight: 700; color: var(--mint); text-transform: uppercase; letter-spacing: 1.5px; display: block; margin-bottom: .6rem; }
+#challenge-text { color: white; font-size: 1rem; line-height: 1.6; }
+footer { background: #070f18; color: rgba(255,255,255,.4); text-align: center; padding: 1.8rem; font-size: .8rem; }
+@media (max-width: 640px) { .modal-grid { grid-template-columns: 1fr; } #compare-result { grid-template-columns: 1fr; } #scoreboard .nav-links { display: none; } .compare-controls { flex-direction: column; align-items: center; } }
 </style>
 </head>
 <body>
 
-<!-- SCOREBOARD FIXO -->
-<nav id="scoreboard" aria-label="Navegação e pontuação">
-  <div class="logo">⚗ TerraRara</div>
-  <div class="score-area" title="Sua pontuação no quiz">
-    <span>⭐ Pontuação:</span>
-    <span id="score-val">0</span>
-  </div>
+<nav id="scoreboard">
+  <div class="logo">⚗ TerraRara | BR × CN</div>
+  <div class="score-area"><span>⭐ Pontos:</span><span id="score-val">0</span></div>
   <div class="nav-links">
-    <a href="#elementos">Elementos</a>
-    <a href="#cotidiano">Cotidiano</a>
-    <a href="#comparacao">Comparar</a>
-    <a href="#desafio">Desafio</a>
+    <a href="#panorama">Panorama</a><a href="#ciclo">Ciclo</a><a href="#elementos">Elementos</a><a href="#cotidiano">Cotidiano</a><a href="#comparacao">Comparar</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero" aria-labelledby="hero-title">
-  <div class="hero-badge">BLOCO 1 · TERRAS RARAS</div>
-  <h1 id="hero-title">Terra Rara<br><span>Explorer</span></h1>
-  <p>Explore os elementos que movem celulares, carros elétricos, telas, turbinas e tecnologias do futuro.</p>
-  <div class="hero-btns">
-    <a href="#elementos" class="btn-primary">🚀 Começar exploração</a>
-    <a href="#elementos" class="btn-secondary">🔬 Ver elementos</a>
+<section id="hero">
+  <div class="hero-badge">GEOPOLÍTICA + TECNOLOGIA</div>
+  <h1>Terra Rara<br><span>Brasil & China</span></h1>
+  <p>Um mergulho nos elementos que dominam a cadeia produtiva global: quem detém a tecnologia e as reservas? Análise expositiva e comparativa.</p>
+  <div class="hero-btns"><a href="#panorama" class="btn-primary">🌏 Explorar Dados</a><a href="#elementos" class="btn-secondary">🔬 Ver Elementos</a></div>
+</section>
+
+<!-- SEÇÃO 1: PANORAMA GEOPOLÍTICO -->
+<section id="panorama">
+  <div class="section">
+    <div class="section-header"><div class="section-tag">DISPUTA GLOBAL</div><h2>Brasil 🇧🇷 vs. China 🇨🇳</h2><p>Potenciais opostos: enquanto a China domina o refino e a cadeia de valor, o Brasil guarda a terceira maior reserva do mundo, ainda inexplorada comercialmente.</p></div>
+    <div class="geo-wrapper">
+      <div class="geo-card"><div class="geo-header china"><div class="geo-icon">🇨🇳</div><h3>China</h3><p>✦ Monopólio do processamento ✦</p></div><div class="geo-body"><ul><li><strong>Produção mundial:</strong> ~70% da mineração, 90% do refino.</li><li><strong>Estratégia:</strong> Controle de patentes, cotas de exportação e estoques nacionais.</li><li><strong>Elementos-chave:</strong> Neodímio, Disprósio, Térbio (ímãs críticos para defensivos e carros elétricos).</li><li><strong>Riscos:</strong> Poluição severa em Baotou (Mongólia Interior) e tensões comerciais.</li></ul></div></div>
+      <div class="geo-card"><div class="geo-header brazil"><div class="geo-icon">🇧🇷</div><h3>Brasil</h3><p>✦ Reserva estratégica adormecida ✦</p></div><div class="geo-body"><ul><li><strong>Reservas:</strong> 3º maior do mundo (~22 milhões de toneladas - USGS).</li><li><strong>Potencial:</strong> Depósitos de Nb e terras raras leves (em Minas Gerais, Goiás e Amazonas).</li><li><strong>Desafio:</strong> Baixo investimento em separação de terras raras pesadas; dependência tecnológica.</li><li><strong>Movimento recente:</strong> Projetos em Araxá (MG) e Pitinga (AM) visam quebrar o monopólio chinês.</li></ul></div></div>
+    </div>
   </div>
 </section>
 
-<!-- SEÇÃO ELEMENTOS -->
-<section id="elementos" aria-labelledby="elem-title">
-  <div class="section">
-    <div class="section-header">
-      <div class="section-tag">ESCOLHA SEU ELEMENTO</div>
-      <h2 id="elem-title">8 Elementos para Explorar</h2>
-      <p>Clique em "Explorar" para descobrir curiosidades e responder o mini quiz de cada elemento.</p>
+<!-- SEÇÃO 2: CICLO PRODUTIVO -->
+<section id="ciclo">
+  <div class="section" style="background: var(--bg-light); border-radius: 32px; margin-bottom: 1rem;">
+    <div class="section-header"><div class="section-tag">CIÊNCIA & INDÚSTRIA</div><h2>🌍 Da Mina ao Smartphone</h2><p>O longo e complexo caminho das terras raras: por que a China lidera não apenas na mineração, mas no refino de alta pureza.</p></div>
+    <div class="process-steps">
+      <div class="step"><span class="step-icon">⛏️</span><h4>1. Mineração</h4><p>Extração de monazita, bastnasita e xenotimo. Brasil detém grande potencial em minerais pesados.</p></div>
+      <div class="step"><span class="step-icon">⚗️</span><h4>2. Separação</h4><p>Processo químico complexo (centenas de etapas) para isolar cada elemento. 90% feito na China.</p></div>
+      <div class="step"><span class="step-icon">🧲</span><h4>3. Metalurgia</h4><p>Transformação em ligas, ímãs e pós. Tecnologia dominada por empresas chinesas e japonesas.</p></div>
+      <div class="step"><span class="step-icon">📱</span><h4>4. Alta tecnologia</h4><p>Motores, telas, baterias, turbinas e dispositivos médicos.</p></div>
     </div>
+    <div class="impact-grid" style="margin-top: 2rem;">
+      <div class="impact-item"><h4>⚠️ Impacto Ambiental na China</h4><p>A cidade de Baotou, maior base de terras raras do mundo, acumulou lagoas de resíduos tóxicos (radioativos: tório, urânio). Emissões de ácido fluorídrico e metais pesados afetam saúde local.</p></div>
+      <div class="impact-item"><h4>🌿 O Potencial do Brasil</h4><p>Com regulação mais rígida e depósitos de terras raras leves, o Brasil pode desenvolver mineração sustentável usando novas tecnologias de extração mais limpas, mas ainda precisa de investimento em P&D.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SEÇÃO DOS ELEMENTOS -->
+<section id="elementos">
+  <div class="section">
+    <div class="section-header"><div class="section-tag">ELEMENTOS CRÍTICOS</div><h2>Os 8 elementos estratégicos</h2><p>Clique em explorar e responda o quiz para acumular pontos.</p></div>
     <div class="cards-grid" id="cards-container"></div>
   </div>
 </section>
 
-<!-- MODAL -->
-<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-el-name">
-  <div id="modal">
-    <div class="modal-header">
-      <button class="modal-close" id="modal-close-btn" aria-label="Fechar">✕</button>
-      <span class="modal-el-icon" id="modal-icon" aria-hidden="true"></span>
-      <span class="modal-symbol" id="modal-sym"></span>
-      <div class="modal-name" id="modal-el-name"></div>
-      <div class="modal-atomic" id="modal-atomic"></div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-grid">
-        <div class="modal-info-card">
-          <label>Onde é usado</label>
-          <p id="modal-used"></p>
-        </div>
-        <div class="modal-info-card">
-          <label>Por que é importante</label>
-          <p id="modal-why"></p>
-        </div>
-      </div>
-      <div class="modal-risk">
-        <label>⚠ Risco Ambiental</label>
-        <p id="modal-risk"></p>
-      </div>
-      <div class="modal-curiosity">
-        <label>💡 Curiosidade rápida</label>
-        <p id="modal-curiosity"></p>
-      </div>
-      <button class="btn-quiz" id="btn-start-quiz">🎯 Responder mini quiz</button>
-    </div>
-    <!-- QUIZ -->
-    <div id="quiz-area">
-      <div class="quiz-question" id="quiz-q"></div>
-      <div class="quiz-options" id="quiz-opts"></div>
-      <div class="quiz-feedback" id="quiz-feedback"></div>
-    </div>
-  </div>
-</div>
-
-<!-- OBJETOS DO COTIDIANO -->
-<section id="cotidiano" aria-labelledby="cot-title">
+<!-- SEÇÃO CONEXÃO REAL (OBJETOS) -->
+<section id="cotidiano">
   <div class="section">
-    <div class="section-header">
-      <div class="section-tag">ONDE VOCÊ USA ISSO?</div>
-      <h2 id="cot-title">Terras Raras no Seu Dia a Dia</h2>
-      <p>Clique em um objeto para ver quais elementos estão dentro dele.</p>
-    </div>
+    <div class="section-header"><div class="section-tag">CONEXÃO REAL</div><h2>Terras Raras no Seu Dia a Dia</h2><p>Clique em qualquer objeto para descobrir quais elementos estão dentro dele.</p></div>
     <div class="objects-grid" id="objects-container"></div>
     <div id="object-detail">
       <h3 id="obj-detail-title"></h3>
@@ -528,249 +386,93 @@ footer span { color: var(--mint); }
   </div>
 </section>
 
-<!-- COMPARAÇÃO -->
-<section id="comparacao" aria-labelledby="comp-title">
+<!-- SEÇÃO COMPARATIVO TÉCNICO -->
+<section id="comparacao">
   <div class="section">
-    <div class="section-header">
-      <div class="section-tag">COMPARAÇÃO</div>
-      <h2 id="comp-title">Compare Dois Elementos</h2>
-      <p>Selecione dois elementos e veja as diferenças lado a lado.</p>
-    </div>
+    <div class="section-header"><div class="section-tag">COMPARATIVO TÉCNICO</div><h2>Compare Dois Elementos</h2><p>Selecione dois elementos e veja as diferenças lado a lado.</p></div>
     <div class="compare-controls">
-      <select id="compare-a" aria-label="Primeiro elemento"></select>
-      <select id="compare-b" aria-label="Segundo elemento"></select>
+      <select id="compare-a"></select>
+      <select id="compare-b"></select>
       <button class="btn-compare" id="btn-compare">Comparar →</button>
     </div>
     <div id="compare-result"></div>
   </div>
 </section>
 
-<!-- DESAFIO FINAL -->
-<section id="desafio" aria-labelledby="desafio-title">
-  <div class="section-tag" style="display:inline-block;background:rgba(45,212,191,.2);color:var(--mint);margin-bottom:1rem;">MISSÃO FINAL</div>
-  <h2 id="desafio-title">Missão Final: Sua Tecnologia<br>Depende de Quais Elementos?</h2>
-  <p>Gere um desafio de reflexão e use o que aprendeu para respondê-lo.</p>
-  <button class="btn-primary" id="btn-challenge">🎲 Gerar desafio</button>
-  <div id="challenge-box">
-    <span class="challenge-label">🔎 Seu Desafio</span>
-    <p id="challenge-text"></p>
+<!-- LINHA DO TEMPO -->
+<section style="background: var(--white);">
+  <div class="section">
+    <div class="section-header"><div class="section-tag">HISTÓRIA E CONTROLE</div><h2>Linha do Tempo Estratégica</h2><p>Como as terras raras se tornaram arma geopolítica.</p></div>
+    <div class="timeline">
+      <div class="timeline-item"><div class="timeline-year">1980-90</div><div class="timeline-desc">China começa a explorar Baotou e oferece preços baixíssimos, fechando minas nos EUA e Europa.</div><div class="timeline-tag">Domínio inicial</div></div>
+      <div class="timeline-item"><div class="timeline-year">2010</div><div class="timeline-desc">Disputa com Japão: China impõe embargo de exportação de terras raras, disparando preços e alertando o Ocidente.</div><div class="timeline-tag">Choque de oferta</div></div>
+      <div class="timeline-item"><div class="timeline-year">2012</div><div class="timeline-desc">Brasil reativa mapeamento de terras raras; grandes projetos em Minas Gerais (Carbonatos) começam a ser estudados.</div><div class="timeline-tag">Potencial brasileiro</div></div>
+      <div class="timeline-item"><div class="timeline-year">2021-2024</div><div class="timeline-desc">EUA, Europa e Brasil anunciam planos para cadeias próprias de refino; Projeto "Terra Rara Sustentável" no Brasil atrai investimentos chineses e canadenses.</div><div class="timeline-tag">Nova rota</div></div>
+    </div>
   </div>
 </section>
 
-<footer>
-  <p>Terra Rara Explorer · Recurso educacional para aulas de Química do Ensino Médio · Feito com <span>♥</span></p>
-</footer>
+<!-- DESAFIO FINAL -->
+<section id="desafio">
+  <div class="section-tag" style="background:rgba(45,212,191,.2);color:var(--mint); display:inline-block;">MISSÃO GEOPOLÍTICA</div>
+  <h2>Desafio: Qual o futuro do Brasil?</h2>
+  <button class="btn-primary" id="btn-challenge">🎲 Gerar desafio reflexivo</button>
+  <div id="challenge-box"><span class="challenge-label">📌 Reflexão</span><p id="challenge-text"></p></div>
+</section>
+
+<footer><p>Terra Rara Explorer · Conteúdo expositivo Brasil-China · Tecnologia e soberania mineral</p></footer>
+
+<!-- MODAL -->
+<div id="modal-overlay"><div id="modal"><div class="modal-header"><button class="modal-close" id="modalCloseBtn">✕</button><span id="modal-icon"></span> <span id="modal-sym"></span><div id="modal-el-name"></div><div id="modal-atomic"></div></div><div class="modal-body"><div class="modal-grid"><div class="modal-info-card"><label>Onde é usado</label><p id="modal-used"></p></div><div class="modal-info-card"><label>Importância</label><p id="modal-why"></p></div></div><div class="modal-risk"><label>⚠ Risco ambiental</label><p id="modal-risk"></p></div><div class="modal-curiosity"><label>💡 Curiosidade</label><p id="modal-curiosity"></p></div><button class="btn-quiz" id="btn-start-quiz">🎯 Iniciar quiz</button></div><div id="quiz-area"><div class="quiz-question" id="quiz-q"></div><div id="quiz-opts"></div><div class="quiz-feedback" id="quiz-feedback"></div></div></div></div>
 
 <script>
-// ===================== DADOS =====================
+// ===================== DADOS COMPLETOS =====================
 const elements = [
-  {
-    id: 'nd', icon: '🧲', name: 'Neodímio', symbol: 'Nd', atomic: 60,
-    app: 'Ímãs de alta potência, motores elétricos e turbinas eólicas.',
-    missions: 4,
-    used: 'Motores de carros elétricos, turbinas eólicas, fones de ouvido, discos rígidos e alto-falantes.',
-    why: 'Produz os ímãs permanentes mais potentes do mundo, essenciais para a transição energética.',
-    risk: 'Mineração gera resíduos radioativos e contamina solo e água nas regiões produtoras.',
-    curiosity: 'Um ímã de Nd-Fe-B do tamanho de um dado pode suspender mais de 1.000x seu próprio peso!',
-    quiz: {
-      q: 'Qual é uma das principais aplicações do neodímio?',
-      opts: ['Produção de ímãs permanentes muito potentes','Fabricação de sal de cozinha','Produção de vidro comum'],
-      correct: 0,
-      explanation: 'O neodímio forma, com ferro e boro, os ímãs permanentes mais potentes já criados — fundamentais para motores de carros elétricos e turbinas.'
-    }
-  },
-  {
-    id: 'la', icon: '🔋', name: 'Lantânio', symbol: 'La', atomic: 57,
-    app: 'Baterias de níquel-metal-hidreto (NiMH) e catalisadores.',
-    missions: 3,
-    used: 'Baterias de carros híbridos, lentes de câmeras, catalisadores de refinarias de petróleo.',
-    why: 'Armazena hidrogênio com eficiência, tornando baterias recarregáveis mais duráveis.',
-    risk: 'Extração em larga escala degrada ecossistemas e gera resíduos ácidos em China e Brasil.',
-    curiosity: 'Um Toyota Prius usa cerca de 10 kg de lantânio apenas na bateria NiMH!',
-    quiz: {
-      q: 'Para que o lantânio é usado em baterias de carros híbridos?',
-      opts: ['Como isolante térmico','Para armazenar hidrogênio na bateria NiMH','Para conduzir eletricidade nos fios'],
-      correct: 1,
-      explanation: 'O lantânio armazena hidrogênio nas baterias de níquel-metal-hidreto (NiMH), amplamente usadas em carros híbridos.'
-    }
-  },
-  {
-    id: 'ce', icon: '🚗', name: 'Cério', symbol: 'Ce', atomic: 58,
-    app: 'Catalisadores automotivos e polimentos de vidro.',
-    missions: 3,
-    used: 'Catalisadores de escapamento de automóveis, polimento de telas de celulares, vidros óticos.',
-    why: 'Reduz as emissões de gases poluentes nos carros e é o mais abundante das terras raras.',
-    risk: 'Produção concentrada na China, com impactos ambientais em regiões de mineração.',
-    curiosity: 'O cério pega fogo espontaneamente ao contato com o ar — por isso é usado em isqueiros de pederneira!',
-    quiz: {
-      q: 'O cério é amplamente utilizado em:',
-      opts: ['Catalisadores de escapamentos de automóveis','Produção de plástico biodegradável','Fabricação de fertilizantes agrícolas'],
-      correct: 0,
-      explanation: 'O cério é componente essencial nos conversores catalíticos dos carros, ajudando a transformar gases poluentes em substâncias menos nocivas.'
-    }
-  },
-  {
-    id: 'eu', icon: '📺', name: 'Európio', symbol: 'Eu', atomic: 63,
-    app: 'Fósforos vermelhos e azuis em telas e LEDs.',
-    missions: 4,
-    used: 'Telas de TV e monitores, notas de euro (segurança), lâmpadas fluorescentes.',
-    why: 'Produz as cores vermelho e azul vibrantes necessárias para imagens de alta definição.',
-    risk: 'Metal raro e caro; sua extração intensiva aumenta pressão sobre reservas limitadas.',
-    curiosity: 'O európio foi o elemento escolhido para autenticar notas de euro — brilha sob luz UV!',
-    quiz: {
-      q: 'Qual é a função do európio nas telas de TV?',
-      opts: ['Produzir as cores vermelha e azul vibrantes','Fabricar o vidro da tela','Alimentar o processador do televisor'],
-      correct: 0,
-      explanation: 'O európio emite luz vermelha e azul quando excitado, sendo essencial para a reprodução de cores vívidas em TVs e monitores.'
-    }
-  },
-  {
-    id: 'dy', icon: '⚙️', name: 'Disprósio', symbol: 'Dy', atomic: 66,
-    app: 'Estabilização de ímãs em altas temperaturas.',
-    missions: 3,
-    used: 'Ímãs de motores de carros elétricos operando em altas temperaturas, lasers, reatores nucleares.',
-    why: 'Mantém os ímãs de neodímio funcionando em temperaturas elevadas — crítico para veículos elétricos.',
-    risk: 'Extremamente escasso; concentrado em poucos países, gerando risco de desabastecimento global.',
-    curiosity: 'Seu nome vem do grego "dysprositos" — difícil de alcançar — e de fato é um dos mais escassos!',
-    quiz: {
-      q: 'Por que o disprósio é valioso para carros elétricos?',
-      opts: ['É o metal mais leve conhecido','Mantém ímãs de Nd funcionando em altas temperaturas','Brilha no escuro indicando carga da bateria'],
-      correct: 1,
-      explanation: 'Sem disprósio, os ímãs de neodímio perderiam sua força em motores quentes. Ele estabiliza o desempenho dos ímãs em temperaturas elevadas.'
-    }
-  },
-  {
-    id: 'tb', icon: '💡', name: 'Térbio', symbol: 'Tb', atomic: 65,
-    app: 'LEDs verdes, sonar e dispositivos magneto-ópticos.',
-    missions: 3,
-    used: 'LEDs de cor verde, sistemas de sonar marítimo, discos de armazenamento magneto-óptico.',
-    why: 'Emite luz verde eficiente para LEDs e é usado em tecnologias de sonar de alta precisão.',
-    risk: 'Como o disprósio, é extremamente raro; extração aumenta pressão ambiental nas regiões produtoras.',
-    curiosity: 'O térbio foi descoberto em 1843 na mesma pedreira sueca que também revelou o ítrio e o érbio!',
-    quiz: {
-      q: 'O térbio é usado principalmente na produção de:',
-      opts: ['Tintas verdes para construção civil','LEDs de cor verde e iluminação eficiente','Medicamentos contra doenças raras'],
-      correct: 1,
-      explanation: 'O térbio emite luz verde eficiente quando excitado, sendo componente essencial em LEDs verdes e telas de alta qualidade.'
-    }
-  },
-  {
-    id: 'y', icon: '🔬', name: 'Ítrio', symbol: 'Y', atomic: 39,
-    app: 'LEDs brancos, supercondutores e lasers médicos.',
-    missions: 4,
-    used: 'LEDs brancos, lasers para medicina, ligas metálicas para aviação, supercondutores.',
-    why: 'Junto com európio, permite a criação de luz branca eficiente em LEDs; essencial para lasers cirúrgicos.',
-    risk: 'Extração gera lama radioativa em regiões de mineração, com impactos severos ao solo e lençol freático.',
-    curiosity: 'O ítrio foi o primeiro elemento das terras raras isolado — descoberto em 1794 em Ytterby, Suécia.',
-    quiz: {
-      q: 'Para que o ítrio é fundamental na tecnologia atual?',
-      opts: ['LEDs brancos e supercondutores de alta temperatura','Produção de sal refinado','Fabricação de couro sintético'],
-      correct: 0,
-      explanation: 'O ítrio é essencial para criar LEDs de luz branca eficientes e para supercondutores cerâmicos usados em pesquisas avançadas.'
-    }
-  },
-  {
-    id: 'pr', icon: '✈️', name: 'Praseodímio', symbol: 'Pr', atomic: 59,
-    app: 'Óculos de proteção, ímãs e motores aeronáuticos.',
-    missions: 3,
-    used: 'Óculos de proteção para soldadores, ligas de ímãs com neodímio, turbinas de aviões.',
-    why: 'Aumenta a resistência de ímãs e ligas metálicas em temperaturas extremas; filtra radiação nos óculos.',
-    risk: 'Subproduto da mineração de cério; riscos ambientais comparáveis — contaminação hídrica e do solo.',
-    curiosity: 'O vidro colorido com praseodímio é intensamente amarelo-esverdeado — muito usado em joalheria!',
-    quiz: {
-      q: 'O praseodímio é utilizado em óculos de proteção para:',
-      opts: ['Soldadores, filtrando radiação intensa','Nadadores, melhorando visibilidade aquática','Ciclistas, reduzindo peso da armação'],
-      correct: 0,
-      explanation: 'O praseodímio, junto com o neodímio, é adicionado ao vidro de óculos de proteção para soldadores pois filtra eficientemente a luz e radiação intensa.'
-    }
-  }
+  { id:'nd', icon:'🧲', name:'Neodímio', symbol:'Nd', atomic:60, app:'Ímãs de alta potência, motores elétricos', used:'Motores de carros elétricos, turbinas eólicas, fones de ouvido', why:'Produz os ímãs permanentes mais potentes do mundo', risk:'Mineração gera resíduos radioativos e contamina solo', curiosity:'Um ímã de Nd-Fe-B do tamanho de um dado suspende mais de 1000x seu peso', quiz:{q:'Qual é a principal aplicação do neodímio?', opts:['Produção de ímãs permanentes potentes','Fabricação de sal de cozinha','Produção de vidro comum'], correct:0, explanation:'Neodímio forma ímãs de NdFeB, essenciais para carros elétricos e turbinas.'}},
+  { id:'la', icon:'🔋', name:'Lantânio', symbol:'La', atomic:57, app:'Baterias de níquel-metal-hidreto', used:'Carros híbridos, lentes de câmeras', why:'Armazena hidrogênio com eficiência em baterias', risk:'Extração degrada ecossistemas', curiosity:'Toyota Prius usa cerca de 10 kg de lantânio na bateria', quiz:{q:'Para que o lantânio é usado em baterias de carros híbridos?', opts:['Isolante térmico','Armazenar hidrogênio na bateria NiMH','Conduzir eletricidade'], correct:1, explanation:'Lantânio armazena hidrogênio nas baterias de níquel-metal-hidreto.'}},
+  { id:'ce', icon:'🚗', name:'Cério', symbol:'Ce', atomic:58, app:'Catalisadores automotivos', used:'Conversores catalíticos, polimento de telas', why:'Reduz emissões de gases poluentes', risk:'Produção concentrada na China', curiosity:'Cério pega fogo espontaneamente ao contato com o ar', quiz:{q:'O cério é amplamente utilizado em:', opts:['Catalisadores de escapamento','Produção de plástico','Fertilizantes'], correct:0, explanation:'Cério é componente essencial em conversores catalíticos de carros.'}},
+  { id:'eu', icon:'📺', name:'Európio', symbol:'Eu', atomic:63, app:'Fósforos para telas', used:'Telas de TV, LEDs, notas de segurança', why:'Produz cores vermelho e azul vibrantes', risk:'Metal raro e caro', curiosity:'Brilha sob luz UV — usado em notas de euro', quiz:{q:'Qual é a função do európio nas telas de TV?', opts:['Produzir cores vermelha e azul','Fabricar o vidro','Alimentar processador'], correct:0, explanation:'Európio emite luz vermelha e azul quando excitado.'}},
+  { id:'dy', icon:'⚙️', name:'Disprósio', symbol:'Dy', atomic:66, app:'Estabilização de ímãs', used:'Motores elétricos, lasers', why:'Mantém ímãs de neodímio em altas temperaturas', risk:'Extremamente escasso', curiosity:'Nome grego "difícil de alcançar"', quiz:{q:'Por que o disprósio é valioso para carros elétricos?', opts:['Estabiliza ímãs em altas temperaturas','É o metal mais leve','Brilha no escuro'], correct:0, explanation:'Disprósio mantém ímãs funcionando em motores quentes.'}},
+  { id:'tb', icon:'💡', name:'Térbio', symbol:'Tb', atomic:65, app:'LEDs verdes', used:'Iluminação LED, sonar', why:'Emite luz verde eficiente', risk:'Extremamente raro', curiosity:'Descoberto em 1843 na Suécia', quiz:{q:'O térbio é usado principalmente na produção de:', opts:['LEDs de cor verde','Tintas para construção','Medicamentos'], correct:0, explanation:'Térbio emite luz verde eficiente em LEDs.'}},
+  { id:'y', icon:'🔬', name:'Ítrio', symbol:'Y', atomic:39, app:'LEDs brancos, supercondutores', used:'LEDs brancos, lasers médicos', why:'Permite luz branca eficiente em LEDs', risk:'Lama radioativa na mineração', curiosity:'Primeiro elemento das terras raras isolado (1794)', quiz:{q:'Para que o ítrio é fundamental na tecnologia atual?', opts:['LEDs brancos e supercondutores','Produção de sal','Fabricação de couro'], correct:0, explanation:'Ítrio é essencial para LEDs de luz branca.'}},
+  { id:'pr', icon:'✈️', name:'Praseodímio', symbol:'Pr', atomic:59, app:'Óculos de proteção', used:'Óculos para soldadores, ligas de ímãs', why:'Filtra radiação intensa', risk:'Subproduto da mineração', curiosity:'Vidro colorido amarelo-esverdeado', quiz:{q:'O praseodímio é utilizado em óculos de proteção para:', opts:['Soldadores, filtrando radiação','Nadadores','Ciclistas'], correct:0, explanation:'Praseodímio filtra luz intensa em óculos de solda.'}}
 ];
 
 const objects = [
-  {
-    icon: '📱', name: 'Celular',
-    elements: [
-      {sym:'Nd', desc:'Ímã do alto-falante e vibrador'},
-      {sym:'Pr', desc:'Reforço do ímã interno'},
-      {sym:'Eu', desc:'Cores vermelha e azul da tela'},
-      {sym:'Y',  desc:'LED branco da tela'},
-      {sym:'Tb', desc:'LED verde da tela'},
-      {sym:'Ce', desc:'Polimento do vidro da tela'}
-    ]
-  },
-  {
-    icon: '🎧', name: 'Fone Bluetooth',
-    elements: [
-      {sym:'Nd', desc:'Ímã potente do driver de áudio'},
-      {sym:'Dy', desc:'Estabiliza o ímã em altas temperaturas'}
-    ]
-  },
-  {
-    icon: '🚗', name: 'Carro Elétrico',
-    elements: [
-      {sym:'Nd', desc:'Motor de tração principal'},
-      {sym:'Dy', desc:'Estabiliza motor em alta temp.'},
-      {sym:'La', desc:'Bateria NiMH (híbridos)'},
-      {sym:'Ce', desc:'Catalisador do escapamento'},
-      {sym:'Pr', desc:'Liga metálica das turbinas'}
-    ]
-  },
-  {
-    icon: '🌬️', name: 'Turbina Eólica',
-    elements: [
-      {sym:'Nd', desc:'Ímã permanente do gerador'},
-      {sym:'Dy', desc:'Estabilidade em temperaturas variáveis'},
-      {sym:'Pr', desc:'Liga metálica estrutural'}
-    ]
-  },
-  {
-    icon: '📺', name: 'TV / Monitor',
-    elements: [
-      {sym:'Eu', desc:'Fósforos vermelho e azul'},
-      {sym:'Tb', desc:'Fósforo verde'},
-      {sym:'Y',  desc:'LED branco do backlight'},
-      {sym:'Ce', desc:'Polimento do painel de vidro'}
-    ]
-  },
-  {
-    icon: '💡', name: 'Lâmpada LED',
-    elements: [
-      {sym:'Y',  desc:'Fósforo branco do LED'},
-      {sym:'Eu', desc:'Componente espectral vermelho'},
-      {sym:'Tb', desc:'Componente espectral verde'},
-      {sym:'Ce', desc:'Ativador de luminescência'}
-    ]
-  }
+  { icon:'📱', name:'Celular', elements:[{sym:'Nd',desc:'Ímã do alto-falante'},{sym:'Eu',desc:'Cores da tela'},{sym:'Y',desc:'LED branco'},{sym:'Ce',desc:'Polimento do vidro'}]},
+  { icon:'🎧', name:'Fone Bluetooth', elements:[{sym:'Nd',desc:'Ímã potente do driver'},{sym:'Dy',desc:'Estabiliza o ímã'}]},
+  { icon:'🚗', name:'Carro Elétrico', elements:[{sym:'Nd',desc:'Motor de tração'},{sym:'Dy',desc:'Estabilizador térmico'},{sym:'La',desc:'Bateria NiMH'},{sym:'Ce',desc:'Catalisador'}]},
+  { icon:'🌬️', name:'Turbina Eólica', elements:[{sym:'Nd',desc:'Gerador de ímãs'},{sym:'Dy',desc:'Estabilidade térmica'}]},
+  { icon:'📺', name:'TV / Monitor', elements:[{sym:'Eu',desc:'Fósforo vermelho/azul'},{sym:'Tb',desc:'Fósforo verde'},{sym:'Y',desc:'Backlight LED'}]},
+  { icon:'💡', name:'Lâmpada LED', elements:[{sym:'Y',desc:'Fósforo branco'},{sym:'Eu',desc:'Espectro vermelho'},{sym:'Tb',desc:'Espectro verde'}]}
 ];
 
 const challenges = [
-  'Explique como o neodímio é essencial para o funcionamento de carros elétricos e por que isso importa para o futuro energético.',
-  'Compare o uso do európio em telas de TV com o uso do térbio em iluminação LED — quais são as semelhanças e diferenças?',
-  'Defenda uma solução para reduzir os impactos ambientais da mineração de terras raras sem prejudicar o desenvolvimento tecnológico.',
-  'Escolha dois elementos estudados e explique como eles colaboram juntos em um mesmo produto tecnológico.',
-  'Se as reservas de disprósio fossem esgotadas, quais tecnologias seriam mais afetadas? Proponha alternativas.',
-  'Por que países com reservas de terras raras têm vantagem geopolítica? Use exemplos dos elementos estudados.',
-  'Crie um argumento persuasivo: vale a pena reciclar celulares velhos para recuperar terras raras? Fundamente com dados.',
-  'Explique a "paradoxo das terras raras": sendo essenciais para tecnologias verdes, por que sua mineração é prejudicial ao meio ambiente?'
+  'Explique como o neodímio é essencial para carros elétricos e por que isso importa para o futuro energético.',
+  'Compare o uso do európio em telas com o térbio em LEDs — quais as semelhanças?',
+  'Defenda uma solução para reduzir impactos ambientais da mineração sem prejudicar a tecnologia.',
+  'Escolha dois elementos e explique como colaboram no mesmo produto.',
+  'Se as reservas de disprósio se esgotassem, quais tecnologias seriam mais afetadas?',
+  'Por que países com reservas de terras raras têm vantagem geopolítica?',
+  'Vale a pena reciclar celulares velhos para recuperar terras raras? Fundamente.',
+  'Explique o paradoxo: essenciais para tecnologias verdes, mas mineração prejudicial ao meio ambiente.'
 ];
 
-// ===================== ESTADO =====================
 let score = 0;
 let currentElement = null;
 let quizAnswered = false;
 
-// ===================== RENDERIZAÇÃO =====================
+// ========== RENDERIZAÇÕES ==========
 function renderCards() {
   const container = document.getElementById('cards-container');
   container.innerHTML = elements.map(el => `
-    <div class="element-card" data-id="${el.id}" role="button" tabindex="0" aria-label="Explorar ${el.name}">
+    <div class="element-card" data-id="${el.id}">
       <div class="card-top"></div>
       <div class="card-body">
-        <span class="card-icon" aria-hidden="true">${el.icon}</span>
+        <span class="card-icon">${el.icon}</span>
         <span class="card-symbol">${el.symbol} · ${el.atomic}</span>
         <div class="card-name">${el.name}</div>
         <div class="card-app">${el.app}</div>
-        <div class="card-missions">📋 ${el.missions} curiosidades & missões</div>
         <button class="btn-explore" data-id="${el.id}">🔍 Explorar</button>
       </div>
     </div>
@@ -780,8 +482,8 @@ function renderCards() {
 function renderObjects() {
   const container = document.getElementById('objects-container');
   container.innerHTML = objects.map((obj, i) => `
-    <div class="object-card" data-idx="${i}" role="button" tabindex="0" aria-label="Ver terras raras em ${obj.name}">
-      <span class="object-icon" aria-hidden="true">${obj.icon}</span>
+    <div class="object-card" data-idx="${i}">
+      <span class="object-icon">${obj.icon}</span>
       <div class="object-name">${obj.name}</div>
     </div>
   `).join('');
@@ -790,19 +492,19 @@ function renderObjects() {
 function renderCompareSelects() {
   const selA = document.getElementById('compare-a');
   const selB = document.getElementById('compare-b');
-  const opts = elements.map(el => `<option value="${el.id}">${el.icon} ${el.name} (${el.symbol})</option>`).join('');
-  selA.innerHTML = opts;
-  selB.innerHTML = opts;
-  selB.selectedIndex = 1;
+  const options = elements.map(el => `<option value="${el.id}">${el.icon} ${el.name} (${el.symbol})</option>`).join('');
+  selA.innerHTML = options;
+  selB.innerHTML = options;
+  if(elements.length > 1) selB.selectedIndex = 1;
 }
 
-// ===================== MODAL =====================
+// ========== MODAL ==========
 function openModal(id) {
   const el = elements.find(e => e.id === id);
-  if (!el) return;
+  if(!el) return;
   currentElement = el;
   quizAnswered = false;
-
+  
   document.getElementById('modal-icon').textContent = el.icon;
   document.getElementById('modal-sym').textContent = el.symbol;
   document.getElementById('modal-el-name').textContent = el.name;
@@ -811,17 +513,14 @@ function openModal(id) {
   document.getElementById('modal-why').textContent = el.why;
   document.getElementById('modal-risk').textContent = el.risk;
   document.getElementById('modal-curiosity').textContent = el.curiosity;
-
+  
   document.getElementById('quiz-area').style.display = 'none';
   document.getElementById('btn-start-quiz').style.display = 'block';
   document.getElementById('quiz-feedback').className = 'quiz-feedback';
-  document.getElementById('quiz-feedback').textContent = '';
+  document.getElementById('quiz-feedback').innerHTML = '';
   document.getElementById('quiz-opts').innerHTML = '';
-  document.getElementById('quiz-q').textContent = '';
-
-  const overlay = document.getElementById('modal-overlay');
-  overlay.classList.add('active');
-  overlay.querySelector('#modal').scrollTop = 0;
+  
+  document.getElementById('modal-overlay').classList.add('active');
   document.body.style.overflow = 'hidden';
 }
 
@@ -832,159 +531,135 @@ function closeModal() {
 }
 
 function startQuiz() {
-  if (!currentElement || quizAnswered) return;
+  if(!currentElement || quizAnswered) return;
   const q = currentElement.quiz;
   document.getElementById('btn-start-quiz').style.display = 'none';
   document.getElementById('quiz-area').style.display = 'block';
   document.getElementById('quiz-q').textContent = q.q;
-
-  const optsEl = document.getElementById('quiz-opts');
-  optsEl.innerHTML = q.opts.map((opt, i) => `
+  
+  document.getElementById('quiz-opts').innerHTML = q.opts.map((opt, i) => `
     <button class="quiz-option" data-idx="${i}">${String.fromCharCode(65+i)}) ${opt}</button>
   `).join('');
 }
 
-function answerQuiz(idx) {
-  if (quizAnswered) return;
+function answerQuiz(selectedIdx) {
+  if(quizAnswered) return;
   quizAnswered = true;
   const q = currentElement.quiz;
   const opts = document.querySelectorAll('.quiz-option');
   const fb = document.getElementById('quiz-feedback');
-
+  
   opts.forEach(btn => btn.disabled = true);
   opts[q.correct].classList.add('correct');
-
-  if (idx === q.correct) {
-    opts[idx].classList.add('correct');
+  
+  if(selectedIdx === q.correct) {
     score += 10;
     document.getElementById('score-val').textContent = score;
     fb.className = 'quiz-feedback correct show';
-    fb.textContent = '🎉 Correto! +10 pontos. ' + q.explanation;
+    fb.innerHTML = `🎉 Correto! +10 pontos. ${q.explanation}`;
   } else {
-    opts[idx].classList.add('wrong');
+    opts[selectedIdx].classList.add('wrong');
     fb.className = 'quiz-feedback wrong show';
-    fb.textContent = '❌ Incorreto. ' + q.explanation;
+    fb.innerHTML = `❌ Incorreto. ${q.explanation}`;
   }
 }
 
-// ===================== OBJETOS =====================
+// ========== OBJETOS ==========
 function showObjectDetail(idx) {
   const obj = objects[idx];
-  document.querySelectorAll('.object-card').forEach(c => c.classList.remove('active'));
-  document.querySelectorAll('.object-card')[idx].classList.add('active');
-
-  document.getElementById('obj-detail-title').textContent = obj.icon + ' ' + obj.name + ' usa estas terras raras:';
+  document.querySelectorAll('.object-card').forEach(card => card.classList.remove('active'));
+  document.querySelectorAll('.object-card')[idx]?.classList.add('active');
+  
+  document.getElementById('obj-detail-title').innerHTML = `${obj.icon} ${obj.name} usa estas terras raras:`;
   document.getElementById('obj-elements-list').innerHTML = obj.elements.map(e => `
-    <div>
-      <span class="obj-el-tag">${e.sym}</span>
-      <div class="obj-el-desc">${e.desc}</div>
-    </div>
+    <div><span class="obj-el-tag">${e.sym}</span> — ${e.desc}</div>
   `).join('');
-
-  const detail = document.getElementById('object-detail');
-  detail.classList.add('show');
+  
+  document.getElementById('object-detail').classList.add('show');
 }
 
-// ===================== COMPARAÇÃO =====================
+// ========== COMPARAÇÃO ==========
 function compareElements() {
   const idA = document.getElementById('compare-a').value;
   const idB = document.getElementById('compare-b').value;
-  if (idA === idB) { alert('Selecione dois elementos diferentes!'); return; }
-
+  if(idA === idB) { alert('Selecione dois elementos diferentes!'); return; }
+  
   const a = elements.find(e => e.id === idA);
   const b = elements.find(e => e.id === idB);
-
-  const result = document.getElementById('compare-result');
-  result.innerHTML = [a, b].map(el => `
+  
+  const resultDiv = document.getElementById('compare-result');
+  resultDiv.innerHTML = `
     <div class="compare-col">
       <div class="compare-col-header">
-        <span class="c-symbol">${el.symbol} · ${el.atomic}</span>
-        <h3>${el.icon} ${el.name}</h3>
+        <span class="c-symbol">${a.symbol} · ${a.atomic}</span>
+        <h3>${a.icon} ${a.name}</h3>
       </div>
       <div class="compare-col-body">
-        <div class="compare-row">
-          <label>Aplicação principal</label>
-          <p>${el.app}</p>
-        </div>
-        <div class="compare-row">
-          <label>Importância tecnológica</label>
-          <p>${el.why}</p>
-        </div>
-        <div class="compare-row">
-          <label>Risco ambiental</label>
-          <p>${el.risk}</p>
-        </div>
-        <div class="compare-row">
-          <label>Presença no cotidiano</label>
-          <p>${el.used}</p>
-        </div>
+        <div class="compare-row"><label>Aplicação principal</label><p>${a.app}</p></div>
+        <div class="compare-row"><label>Importância</label><p>${a.why}</p></div>
+        <div class="compare-row"><label>Risco ambiental</label><p>${a.risk}</p></div>
+        <div class="compare-row"><label>Onde é usado</label><p>${a.used}</p></div>
       </div>
     </div>
-  `).join('');
-
-  result.classList.add('show');
-  result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    <div class="compare-col">
+      <div class="compare-col-header">
+        <span class="c-symbol">${b.symbol} · ${b.atomic}</span>
+        <h3>${b.icon} ${b.name}</h3>
+      </div>
+      <div class="compare-col-body">
+        <div class="compare-row"><label>Aplicação principal</label><p>${b.app}</p></div>
+        <div class="compare-row"><label>Importância</label><p>${b.why}</p></div>
+        <div class="compare-row"><label>Risco ambiental</label><p>${b.risk}</p></div>
+        <div class="compare-row"><label>Onde é usado</label><p>${b.used}</p></div>
+      </div>
+    </div>
+  `;
+  resultDiv.classList.add('show');
+  resultDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ===================== DESAFIO =====================
 function generateChallenge() {
-  const box = document.getElementById('challenge-box');
-  const text = document.getElementById('challenge-text');
   const random = challenges[Math.floor(Math.random() * challenges.length)];
-  text.textContent = random;
-  box.classList.add('show');
-  box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  document.getElementById('challenge-text').textContent = random;
+  document.getElementById('challenge-box').classList.add('show');
+  document.getElementById('challenge-box').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 }
 
-// ===================== EVENTOS =====================
+// ========== EVENTOS ==========
 document.addEventListener('DOMContentLoaded', () => {
   renderCards();
   renderObjects();
   renderCompareSelects();
-
-  // Clique nos cards
+  
+  // Cards
   document.getElementById('cards-container').addEventListener('click', e => {
     const btn = e.target.closest('[data-id]');
-    if (btn) openModal(btn.dataset.id);
+    if(btn) openModal(btn.dataset.id);
   });
-
-  // Tecla Enter nos cards
-  document.getElementById('cards-container').addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const card = e.target.closest('.element-card');
-      if (card) openModal(card.dataset.id);
-    }
-  });
-
-  // Fechar modal
-  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  
+  // Modal fechar
+  document.getElementById('modalCloseBtn').addEventListener('click', closeModal);
   document.getElementById('modal-overlay').addEventListener('click', e => {
-    if (e.target === document.getElementById('modal-overlay')) closeModal();
+    if(e.target === document.getElementById('modal-overlay')) closeModal();
   });
-  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
-
+  document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+  
   // Quiz
   document.getElementById('btn-start-quiz').addEventListener('click', startQuiz);
   document.getElementById('quiz-opts').addEventListener('click', e => {
     const btn = e.target.closest('.quiz-option');
-    if (btn && !quizAnswered) answerQuiz(parseInt(btn.dataset.idx));
+    if(btn && !quizAnswered) answerQuiz(parseInt(btn.dataset.idx));
   });
-
+  
   // Objetos
   document.getElementById('objects-container').addEventListener('click', e => {
     const card = e.target.closest('.object-card');
-    if (card) showObjectDetail(parseInt(card.dataset.idx));
+    if(card) showObjectDetail(parseInt(card.dataset.idx));
   });
-  document.getElementById('objects-container').addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-      const card = e.target.closest('.object-card');
-      if (card) showObjectDetail(parseInt(card.dataset.idx));
-    }
-  });
-
+  
   // Comparação
   document.getElementById('btn-compare').addEventListener('click', compareElements);
-
+  
   // Desafio
   document.getElementById('btn-challenge').addEventListener('click', generateChallenge);
 });
